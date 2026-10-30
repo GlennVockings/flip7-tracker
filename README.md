@@ -18,3 +18,7 @@ Enter the complete round total, including any Flip 7 bonus, then tick Flip 7 as 
 ## Privacy
 
 No accounts, analytics, server, or data synchronization. Data is specific to the browser/device. Export backups to avoid data loss.
+
+## Session management and awards
+
+Use History → Delete to permanently remove an entire session, including its games and rounds. The session roster is fixed after the first recorded round. Session awards appear under Stats when a session is open: lowest positive round, longest non-scoring streak, most and least Flip 7s, highest round, and most wins. Ties are shared; awards use raw counts, not rates. Older sessions with different rosters across games show a warning instead of misleading awards.
