@@ -29,3 +29,11 @@ Player names need only be unique within one session. Deleting a session also cle
 ## Version 4
 
 Session Summary (accessible from the session screen and History), session score-progression SVG chart, and additional session awards: biggest comeback in a finished game win, longest positive-scoring streak, most positive round wins, and most last-place finishes. Awards include ties. Session rosters remain fixed after the first round. Existing browser data is preserved.
+
+## Version
+
+Current release: **v5.1.0**. The version appears under the app title. Offline cache is versioned per release. Existing saved data retains the same localStorage key.
+
+## Version 5.1.0
+
+One unified score tracker for all sessions, with positive/negative round scores and independent Flip 7 tracking. Includes session-only awards, score progression, summary, fixed rosters, session finishing/reopening/deleting, and improved navigation. The separate Ultimate mode and calculator have been removed. Existing scores remain in browser storage.
