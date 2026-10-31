@@ -41,3 +41,11 @@ Current release: **v5.1.0**. The version appears under the app title. Offline ca
 ## Version 5.1.0
 
 One unified score tracker for all sessions, with positive/negative round scores and independent Flip 7 tracking. Includes session-only awards, score progression, summary, fixed rosters, session finishing/reopening/deleting, and improved navigation. The separate Ultimate mode and calculator have been removed. Existing scores remain in browser storage.
+
+## v5.1.2 — Edit a saved round
+
+Use **Edit** next to any round in the game history to correct scores, positive/negative signs and Flip 7 flags without removing later rounds. Saving updates session totals, awards and progression charts automatically.
+
+## v5.1.3 — Flip 7 scoring records
+
+Adds highest and lowest scoring Flip 7 session awards (including negative scores), with player, game, and round references. Awards update automatically when saved rounds are edited. No additional scoring inputs.
