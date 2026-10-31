@@ -22,3 +22,10 @@ No accounts, analytics, server, or data synchronization. Data is specific to the
 ## Session management and awards
 
 Use History → Delete to permanently remove an entire session, including its games and rounds. The session roster is fixed after the first recorded round. Session awards appear under Stats when a session is open: lowest positive round, longest non-scoring streak, most and least Flip 7s, highest round, and most wins. Ties are shared; awards use raw counts, not rates. Older sessions with different rosters across games show a warning instead of misleading awards.
+
+## Session player names
+Player names need only be unique within one session. Deleting a session also cleans up players no longer referenced by other sessions.
+
+## Version 4
+
+Session Summary (accessible from the session screen and History), session score-progression SVG chart, and additional session awards: biggest comeback in a finished game win, longest positive-scoring streak, most positive round wins, and most last-place finishes. Awards include ties. Session rosters remain fixed after the first round. Existing browser data is preserved.
