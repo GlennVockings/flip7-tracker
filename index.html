@@ -1,10 +1,48 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#141c2d"/><meta name="application-version" content="5.1.0"/><title>Flip 7 Tracker</title><link rel="manifest" href="manifest.webmanifest"/><style>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#111318"/><meta name="application-version" content="5.1.1"/><title>Flip 7 Tracker</title><link rel="manifest" href="manifest.webmanifest"/><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#f2f6ff;background:#0d1729}*{box-sizing:border-box}body{margin:0}main{max-width:900px;margin:auto;padding:20px 16px 70px}h1{margin:0;font-size:30px}h2{font-size:21px;margin:0 0 12px}.sub{color:#9fb2d0;font-size:13px}.header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}.card{background:#172640;border:1px solid #2a4063;border-radius:18px;padding:17px;margin-bottom:14px}.row{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.between{justify-content:space-between}.grow{flex:1}.button,button{cursor:pointer;background:#3c7eff;border:0;color:white;border-radius:11px;padding:11px 14px;font-size:14px;font-weight:700}button.secondary{background:#2a3d5e}button.danger{background:#7c3041}button:disabled{opacity:.45;cursor:not-allowed}input,select{background:#0d1a2f;color:white;border:1px solid #41587b;border-radius:10px;padding:11px;min-width:0;font:inherit}input[type=number]{width:95px}input[type=text]{width:100%}.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:#28476c;color:#d8e8ff;font-size:12px}.leader{color:#ffd56a}.player{padding:12px 0;border-top:1px solid #2c4263}.score{font-size:23px;font-weight:800}.muted{color:#9fb2d0}.tabs{display:flex;gap:8px;margin-bottom:15px}.tabs button{flex:1}.tabs .active{background:#3c7eff}.tabs button:not(.active){background:#263a59}.statgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{background:#101e34;padding:13px;border-radius:12px}.stat b{font-size:23px;display:block;margin-top:5px}.small{font-size:12px}.hidden{display:none}.score-input{width:92px}.round-row{display:grid;grid-template-columns:minmax(85px,1fr) 100px auto auto;gap:8px;align-items:center;padding:9px 0;border-top:1px solid #2c4263}.switch{display:flex;align-items:center;gap:5px;font-size:12px}.switch input{width:18px;height:18px;accent-color:#3c7eff}.chart-scroll{overflow-x:auto}.round-history{padding:9px 0;border-top:1px solid #2c4263}.error{color:#ff9d9d}.foot{font-size:12px;color:#9fb2d0;margin-top:20px}@media(max-width:520px){.round-row{grid-template-columns:minmax(75px,1fr) 84px auto auto;gap:5px}.round-row input[type=number]{width:80px}.round-row button{padding:9px}.card{padding:13px}.header{align-items:flex-start}}
 
 /* Flip 7-inspired bright card colours, without using official artwork */
 :root{color:#f7f8ff;background:#111827}body{background:radial-gradient(circle at 90% 0%,#3c1e56 0%,transparent 38%),radial-gradient(circle at 0% 30%,#133f4e 0%,transparent 45%),#111827}
 h1{color:#fff;letter-spacing:-.7px}h1::first-letter{color:#ffda46}.card{background:#202b40;border-color:#4b526d;box-shadow:0 8px 24px #0002}.stat{background:#15243a}.pill{background:#433562;color:#ffe68a}.sub,.muted{color:#c2cbe0}.leader{color:#ffe46c}button{background:#e84f85;color:#fff}button.secondary{background:#364969}button.danger{background:#9b334f}button.finish{background:#29a97f;color:#081d1c}.tabs .active{background:#f0c94c;color:#18213b}.tabs button:not(.active){background:#33445f}input,select{background:#141f34;border-color:#6b7293}.breadcrumbs{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:-8px 0 15px;color:#c4cde0;font-size:13px}.navlink{background:transparent;color:#ffe077;padding:7px 2px;text-decoration:underline;text-underline-offset:3px}.foot{color:#c2cbe0}
-</style></head><body><main><div class="header"><div><h1>⚡ Flip 7 Tracker</h1><div class="sub">Games, sessions & stats • saved on this device <span class="pill" id="app-version" aria-label="App version">v5.1.0</span></div></div><button class="secondary" id="export">Export</button></div><div class="tabs"><button data-tab="play" class="active">Play</button><button data-tab="stats">Stats</button><button data-tab="history">History</button></div><div id="app"></div><div class="foot">Unofficial fan-made score tracker. Not affiliated with the Flip 7 publisher. Data is stored locally in this browser; export a backup regularly.</div><input id="import-file" type="file" accept="application/json" class="hidden"></main><script type="module">
+
+/* v5.1.1 — card-table theme: bold yellow, coral, teal, ink and warm white. */
+:root{color:#1b1b21;background:#f8f2df;color-scheme:light}
+body{background:radial-gradient(circle at 95% 0%,#ffd449 0,transparent 32%),radial-gradient(circle at 0% 45%,#f9b9a7 0,transparent 33%),#f8f2df;color:#1b1b21}
+main{max-width:900px}
+h1{color:#111318;font-weight:950;letter-spacing:-1.2px;text-transform:uppercase;text-shadow:2px 2px 0 #ffca32}
+h1::first-letter{color:#ec4e45}
+h2{color:#16171c;font-weight:850}
+.header{background:#fffdf7;border:3px solid #16171c;border-radius:20px;padding:15px;box-shadow:5px 5px 0 #16171c}
+.header .sub{color:#484951}
+.card{background:#fffdf7;border:2px solid #1c1c22;border-radius:17px;box-shadow:4px 4px 0 #1c1c22;color:#1b1b21}
+.card:nth-of-type(3n){border-top:6px solid #ef5849}.card:nth-of-type(3n + 1){border-top:6px solid #0baba5}.card:nth-of-type(3n + 2){border-top:6px solid #ffca32}
+.sub,.muted,.foot{color:#52545b}
+.player,.round-row,.round-history{border-top-color:#e0d8c7}
+.score{color:#12151c}
+.stat{background:#fff0bb;border:1px solid #ddbf63;color:#15171c}
+.stat:nth-child(4n+2){background:#d6f4f0;border-color:#70bdb4}
+.stat:nth-child(4n+3){background:#ffe0d6;border-color:#e8a395}
+.stat:nth-child(4n){background:#f1e3ff;border-color:#c5a9e6}
+.stat b{color:#111318}
+.pill{background:#ffcf3d;color:#16171c;border:1px solid #16171c;font-weight:800}
+.leader{color:#a44a0b}
+button,.button{background:#ef5849;color:#fff;border:2px solid #16171c;box-shadow:2px 2px 0 #16171c;font-weight:800}
+button.secondary{background:#0baba5;color:#111318}
+button.danger{background:#d64049;color:#fff}
+button.finish{background:#f5bf28;color:#16171c}
+button:disabled{opacity:.5}
+.tabs{gap:7px}
+.tabs button{border-radius:12px}
+.tabs .active{background:#ffcc35;color:#17181d}
+.tabs button:not(.active){background:#fffdf7;color:#17181d}
+input,select{background:#fff;color:#17181d;border:2px solid #4b4b50}
+input:focus,select:focus,button:focus-visible{outline:3px solid #0baba5;outline-offset:2px}
+.switch input{accent-color:#ef5849}
+.breadcrumbs{color:#3f4148}
+.navlink{background:transparent;color:#096d70;border:0;box-shadow:none;text-decoration:underline}
+.error{color:#ad2430}
+@media(max-width:520px){.header{padding:11px}.card{box-shadow:3px 3px 0 #1c1c22}h1{font-size:25px}}
+</style></head><body><main><div class="header"><div><h1>⚡ Flip 7 Tracker</h1><div class="sub">Games, sessions & stats • saved on this device <span class="pill" id="app-version" aria-label="App version">v5.1.1</span></div></div><button class="secondary" id="export">Export</button></div><div class="tabs"><button data-tab="play" class="active">Play</button><button data-tab="stats">Stats</button><button data-tab="history">History</button></div><div id="app"></div><div class="foot">Unofficial fan-made score tracker. Not affiliated with the Flip 7 publisher. Data is stored locally in this browser; export a backup regularly.</div><input id="import-file" type="file" accept="application/json" class="hidden"></main><script type="module">
 const KEY='flip7-tracker-v1';const uid=()=>crypto.randomUUID();const initial=()=>({players:[],sessions:[],currentSession:null,currentGame:null});let db;try{db=JSON.parse(localStorage.getItem(KEY))||initial()}catch{db=initial()}let tab='play';let draft={};let showSummary=false;const $=id=>document.getElementById(id);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const save=()=>localStorage.setItem(KEY,JSON.stringify(db));const session=()=>db.sessions.find(s=>s.id===db.currentSession);const game=()=>session()?.games.find(g=>g.id===db.currentGame);const pName=id=>db.players.find(p=>p.id===id)?.name||'Unknown';const totals=g=>Object.fromEntries(g.playerIds.map(id=>[id,g.rounds.reduce((sum,r)=>sum+(r.scores[id]?.points||0),0)]));const playerStats=(games,id)=>{let rounds=[],wins=0,played=0;for(const g of games){if(!g.playerIds.includes(id))continue;played++;const t=totals(g);if(g.finished&&t[id]===Math.max(...Object.values(t)))wins++;rounds.push(...g.rounds.map(r=>r.scores[id]||{points:0,flip:false}));}let since=0,longest=0,streak=0;for(const r of rounds){if(r.points<=0){streak++;longest=Math.max(longest,streak)}else streak=0;}for(let i=rounds.length-1;i>=0&&rounds[i].points<=0;i--)since++;return {played,wins,rounds:rounds.length,points:rounds.reduce((a,r)=>a+r.points,0),flips:rounds.filter(r=>r.flip).length,since,longest,best:rounds.length?Math.max(...rounds.map(r=>r.points)):0,average:rounds.length?Math.round(rounds.reduce((a,r)=>a+r.points,0)/rounds.length*10)/10:0};};const allGames=()=>db.sessions.flatMap(s=>s.games);
 const roster=s=>s.playerIds??s.games[0]?.playerIds??[];
 const locked=s=>s.games.some(g=>g.rounds.length>0);

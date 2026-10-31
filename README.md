@@ -1,3 +1,7 @@
+# Flip 7 Tracker v5.1.1
+
+Card-inspired yellow, coral, teal and cream theme. Same functionality and storage as v5.1.0.
+
 # Flip 7 Tracker
 
 A mobile-first, offline-capable, unofficial Flip 7 score tracker. Tracks signed round scores, Flip 7 achievements, consecutive non-scoring rounds, per-game totals, session statistics, and multiple games per session. Stores data in browser localStorage, with JSON export/import backups.
